@@ -1,5 +1,17 @@
 <h1>Sign up</h1>
 
+<%# また、エラー文を表示させるコードをform_with外に記述していますが、通常はform_with内に記述します。 %>
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this @user from being saved:</h2>
+    <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_with(model: @user, local: true) do |f| %>  
   <%= f.label :name %>
   <%= f.text_field :name %>
