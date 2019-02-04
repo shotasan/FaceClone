@@ -14,7 +14,16 @@ class FeedsController < ApplicationController
 
   # GET /feeds/new
   def new
-    @feed = Feed.new
+    # confirm.html.erbから戻るを押した時にbackが属性として付いてくる
+    if params[:back]
+      @feed = Feed.new(feed_params)
+    else
+      @feed = Feed.new
+    end
+  end
+
+  def confirm
+    @feed = Feed.new(feed_params)
   end
 
   # GET /feeds/1/edit
