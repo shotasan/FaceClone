@@ -14,7 +14,11 @@
   <tbody>
     <% @feeds.each do |feed| %>
       <tr>
-        <td><%= feed.image %></td>
+        <%# require "mini_magick" %>
+        <%# image = MiniMagick::Image.open("feed.image.url") %>
+        <%# <td><%= image ></td> %>
+
+        <td><%= image_tag feed.image.url %>
         <td><%= feed.text %></td>
         <td><%= link_to 'Show', feed %></td>
         <td><%= link_to 'Edit', edit_feed_path(feed) %></td>
