@@ -1,3 +1,21 @@
 <h1><%= @user.name %>のページ</h1>
 
 <p>メールアドレス: <%= @user.email %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Text</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.feeds.each do |user| %>
+      <tr>
+        <td><%= image_tag user.image.url %>
+        <td><%= user.text %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
