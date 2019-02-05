@@ -3,4 +3,4 @@
 <%= render 'form', feed: @feed %>
 
 <%= link_to 'Show', @feed %> |
-<%= link_to 'Back', feeds_path %>
+<%= link_to 'Back', user_path(current_user.id) %>

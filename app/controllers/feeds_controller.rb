@@ -51,7 +51,7 @@ class FeedsController < ApplicationController
   def update
     respond_to do |format|
       if @feed.update(feed_params)
-        format.html { redirect_to @feed, notice: 'Feed was successfully updated.' }
+        format.html { redirect_to user_path(current_user.id), notice: 'Feed was successfully updated.' }
         format.json { render :show, status: :ok, location: @feed }
       else
         format.html { render :edit }
@@ -65,19 +65,19 @@ class FeedsController < ApplicationController
   def destroy
     @feed.destroy
     respond_to do |format|
-      format.html { redirect_to feeds_url, notice: 'Feed was successfully destroyed.' }
+      format.html { redirect_to user_path(current_user.id), notice: 'Feed was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
   # idをもとにデータベースから該当するデータを取得する処理を記述
-    def set_feed
-      @feed = Feed.find(params[:id])
-    end
+  def set_feed
+    @feed = Feed.find(params[:id])
+  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def feed_params
-      params.require(:feed).permit(:image, :text, :image_cache)
-    end
+  def feed_params
+    params.require(:feed).permit(:image, :text, :image_cache, :id)
+  end
 end
