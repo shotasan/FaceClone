@@ -11,7 +11,8 @@ class SessionsController < ApplicationController
       # 詳細画面へ
       redirect_to user_path(user.id)
     else
-      flash.now[:danger] = "ログインに失敗しました"
+      
+      flash.now[:danger] = "ログインに失敗しました"   
       render "new"
     end
   end
@@ -21,4 +22,13 @@ class SessionsController < ApplicationController
     flash[:notice] = "ログアウトしました"
     redirect_to new_session_path
   end
+
+
+
+  # private
+
+  # # new.html.erbからパラメーターを受ける
+  # def login_params
+  #   params.require(:*).permit(:email, :password)
+  # end
 end
