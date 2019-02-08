@@ -1,10 +1,14 @@
-.btn btn-default navbar-btn {
+.navbar-btn-signup {
   float: right;
   margin-right: 10px;
-  color: red;
-  background-color: blue;
 }
 
-.btn navbar-btn-login {
+.navbar-btn-login {
   float: right;
+  vertical-align: middle;
+}
+
+#collapse-id {
+  padding-top: 10px;
+  padding-right: 0px;
 }
