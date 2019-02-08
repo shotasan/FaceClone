@@ -19,8 +19,25 @@
       </div>
       <!-- idは、上記ボタンのdata-targetに指定したものと揃えること -->
       <div class="collapse navbar-collapse" id="collapse-id">
-        <%= link_to "ログイン", new_session_path, type: "button", class: "btn btn-default navbar-btn-login" %>
-        <%= link_to "新規登録", new_user_path, type: "button", class: "btn btn-default navbar-btn-signup" %>
+        <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+
+          <table class="login-table">
+            <tbody>
+              <tr>
+                <td><%= f.label :email %></td>
+                <td><%= f.label :password %></td>
+              </tr>
+              <tr>
+                <td><%= f.email_field :email %></td>
+                <td><%= f.password_field :password %></td>
+                <td><%= f.submit "Log in" %></td>
+              </tr>
+            </tbody>
+          </table>
+        <% end %>
+        
+          <%# <%= link_to "ログイン", new_session_path, type: "button", class: "btn btn-default navbar-btn-login" %>
+          <%# <%= link_to "新規登録", new_user_path, type: "button", class: "btn btn-default navbar-btn-signup" %>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>   
