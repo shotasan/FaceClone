@@ -19,10 +19,29 @@
       <%= link_to "Post", new_feed_path %>
       <%= link_to "PostIndex", feeds_path %>
     <% else %>
-      <%= link_to "Sign up", new_user_path %>
-      <%= link_to "Login", new_session_path %>
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <!-- 画面サイズが小さい時に表示されるボタン -->
+            <!-- data-targetにollapseを指定したdivのidを指定すること -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-id">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">FacebookClone</a>
+          </div>
+          <!-- idは、上記ボタンのdata-targetに指定したものと揃えること -->
+          <div class="collapse navbar-collapse" id="collapse-id">
+            <button type="button" class="btn btn-default navbar-btn"><%= link_to "ログイン", new_session_path %></button>
+            <button type="button" class="btn btn-default navbar-btn-login"><%= link_to "新規登録", new_user_path %></button>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>      
     <% end %>
     
     <%= yield %>
+
   </body>
 </html>
