@@ -1,3 +1,30 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.container {
+  background-color: #01172c;
+  width: 100%;
+  height: 100%;
+}
+
+.create-account-button {
+  display: block;
+  color: white;
+  background: linear-gradient(#67ae55, #578843);
+  background-color: #69a74e;
+  box-shadow: inset 0 1px 1px #a4e388;
+  border-color: #3b6e22 #3b6e22 #2c5115;
+}
+
+.form-control {
+  height: auto;
+  width: 50%;
+}
+
+img {
+  width: auto;
+}
+
+.signup-form {
+  margin: 0 auto;
+}
