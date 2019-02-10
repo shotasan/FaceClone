@@ -1,8 +1,19 @@
 <% if logged_in? %>
-  <%= link_to "Profile", user_path(current_user.id) %>
-  <%= link_to "Logout", session_path(current_user.id), method: :delete %>
-  <%= link_to "Post", new_feed_path %>
-  <%= link_to "PostIndex", feeds_path %>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <!-- 画面サイズが小さい時に表示されるボタン -->
+        <!-- data-targetにollapseを指定したdivのidを指定すること -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-id">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">FacebookClone</a>
+      </div>
+    </div>
+  </nav>
 <% else %>
   <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
