@@ -1,11 +1,6 @@
 // Place all the styles related to the feeds controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.sidebar {
-  display: none;
-  background-color: aqua;
-}
-
 @media screen and (min-width: 768px) {
   .sidebar {
     position: fixed;
@@ -19,16 +14,15 @@
 }
 
 .container-feed-index {
-  background-color: pink;
   height: 100%;
 }
 
 .card {
-  padding: 0.2em 0.5em;
-  margin: 2em 0;
-  background: #d6ebff;
-  box-shadow: 0px 0px 0px 10px #d6ebff;
-  border: dashed 2px white;
+  margin: 30px auto;
+  width: 350px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
 }
 
 
@@ -46,14 +40,47 @@
 }
 
 .side {
-  display: flex;
   align-items: center;
   justify-content: center;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 10px;
+  position: fixed;
+  top: 50px;
+  bottom: 56px;
   width: 140px;
-  height: 140px;
-  color: #fff;
-  background: #30b298;
+  color: black;
+  background-color: #none;
+}
+
+.list li {
+  list-style: none;
+  padding-top: 20px;
+  text-align: center
+}
+
+.list {
+  padding-left: 0px;
+}
+
+.main-content {
+  display: inline-block;
+}
+
+.card-user {
+  padding-left: 30px;
+  font-size: 20px;
+  text-align: left;
+  float: left;
+}
+
+.card-user span {
+  float: right;
+}
+
+.card-text {
+  padding: 30px 0px;
+  margin-top: 10px;
+  background-color: whitesmoke;
+}
+
+.card-img-bottom {
+  width: 100%;
 }

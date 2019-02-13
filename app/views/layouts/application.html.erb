@@ -11,14 +11,21 @@
     <header>
       <%= render 'layouts/header' %>
     </header>
-      <% flash.each do |key, value| %>
+
+    
+    <%= render 'layouts/sidebar' %>
+   
+
+    <% flash.each do |key, value| %>
         <% key = "info" if key == "notice" %>
         <% key = "danger" if key == "alert" %>
         <%= content_tag(:div, value, class: "alert alert-success alert-#{key}" ,role: "alert") %>
-      <% end %>
+    <% end %>
+
     <div class="content">
       <%= yield %>
     </div>
+    
     <footer>
       <p>運営会社DIVE INTO CODE株式会社</p>
       <p>© 2015-2016 Copyright DIVE INTO CODE Corp.</p>

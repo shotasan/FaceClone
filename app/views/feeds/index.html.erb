@@ -1,27 +1,4 @@
-<div class="container-feed-index">
-  <div class="content-feed">
-    <div class="side">
-      <ul id="list">
-        <li><%= link_to "Profile", user_path(current_user.id) %></li>
-        <li><%= link_to "Post", new_feed_path %></li>
-        <li><%= link_to "PostIndex", feeds_path %></li>
-        <li><%= link_to "Logout", session_path(current_user.id), method: :delete %></li>
-      </ul>
-    </div>
-    <div class="main">
-      <p id="notice"><%= notice %></p>
-      <h1>タイムライン</h1>
-      <% @feeds.each do |feed| %>
-        <div class="card" style="width: 20rem;">
-          <div class="card-body">
-            <p><%= feed.user.name %></p>
-            <span><%= feed.created_at %></span>
-            <p class="card-text"><%= feed.text %></p>         
-          </div>
-        <%= image_tag feed.image.url, class: "card-img-bottom" %>
-        </div>
-      <% end %>
-      </div>
-    </div>
-  </div>
+<div class="main-content">
+  <p id="notice"><%= notice %></p>
+  <%= render "feed_index" %>
 </div>

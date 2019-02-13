@@ -1,0 +1,11 @@
+<h1>タイムライン</h1>
+<% @feeds.each do |feed| %>
+  <div class="card" >
+    <div class="card-body">
+      <p class="card-user"><%= feed.user.name %></p>
+      <span><%= feed.created_at %></span>
+      <p class="card-text"><%= feed.text %></p>         
+    </div>
+  <%= image_tag feed.image.url, class: "card-img-bottom" %>
+  </div>
+<% end %>
