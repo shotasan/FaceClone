@@ -2,28 +2,20 @@
 
 <p>メールアドレス: <%= @user.email %></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Text</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% if @user.feeds.empty? %> 
-      <td><p>投稿はありません</p></td>
-    <% else %>
+<% if @user.feeds.empty? %> 
+  <p>投稿はありません</p>
+<% else %>
       <%# user_idからfeedテーブルのレコードを取得し一つずつuserに入れる %>
       <%# feedにはfeedのレコードが入っている%>
-      <% @user.feeds.each do |feed| %>
-        <tr>
-          <td><%= image_tag feed.image.url %>
-          <td><%= feed.text %></td>
-          <td><%= link_to 'Show', feed_path(feed.id) %></td>
-          <td><%= link_to 'Edit', edit_feed_path(feed.id) %></td>
-          <td><%= link_to 'Destroy', feed_path(feed.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    <% end %>
-  </tbody>
-</table>
+  <% @user.feeds.each do |feed| %>
+    <div class="card" >
+      <div class="card-body">
+        <span><%= feed.created_at %></span>
+        <p class="card-text"><%= feed.text %></p>         
+      </div>
+      <%= image_tag feed.image.url, class: "card-img-bottom" %>   
+      <%= link_to '編集する', edit_feed_path(feed.id) %>
+      <%= link_to '削除する', feed_path(feed.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+     </div>
+  <% end %>
+<% end %>

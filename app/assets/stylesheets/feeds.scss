@@ -2,14 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @media screen and (min-width: 768px) {
-  .sidebar {
+  .side.list {
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     display: block;
     overflow-x: hidden;
-    overflow-y: auto
+    overflow-y: auto;
   }
 }
 
@@ -43,16 +43,15 @@
   align-items: center;
   justify-content: center;
   position: fixed;
-  top: 50px;
+  top: 100px;
   bottom: 56px;
   width: 140px;
   color: black;
-  background-color: #none;
 }
 
 .list li {
   list-style: none;
-  padding-top: 20px;
+  padding-top: 30px;
   text-align: center
 }
 
@@ -83,4 +82,8 @@
 
 .card-img-bottom {
   width: 100%;
+}
+
+.field-image input{
+  margin: auto;
 }
