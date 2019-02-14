@@ -3,7 +3,7 @@
     <img src="/assets/face.jpg", class="col-md-6">
     <%= form_with(model: @user, local: true, class: "col-md-6 signup-form") do |f| %> 
       <% if @user.errors.any? %>
-        <div id="error_explanation">
+        <div class="alert alert-warning">
           <h2><%= pluralize(@user.errors.count, "件") %> のエラーがあります。</h2>
           <ul>
           <% @user.errors.full_messages.each do |message| %>

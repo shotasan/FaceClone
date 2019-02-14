@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       # アカウント作成後に自身のidを引数としてshowアクションを実行
+      session[:user_id] = @user.id
       redirect_to user_path(@user.id)
     else
       render "new"

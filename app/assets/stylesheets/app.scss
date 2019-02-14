@@ -9,6 +9,10 @@ body {
   margin: 0;
 }
 
+li {
+  list-style: none;
+}
+
 .content {
   flex: 1;
   text-align: center;
@@ -85,4 +89,8 @@ footer p {
 
 .btn.back-button {
   color: white;
+}
+
+.error_explanation ul li {
+  color: black
 }

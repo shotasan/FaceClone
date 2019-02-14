@@ -7,11 +7,6 @@ class FeedsController < ApplicationController
     @feeds = Feed.all.order(id: "DESC")
   end
 
-  # GET /feeds/1
-  # GET /feeds/1.json
-  def show
-  end
-
   # GET /feeds/new
   def new
     # confirm.html.erbから戻るを押した時にbackが属性として付いてくる
