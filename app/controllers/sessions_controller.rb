@@ -8,10 +8,8 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       # ログインしたユーザのidをセッションに保存
       session[:user_id] = user.id
-      # 詳細画面へ
       redirect_to user_path(user.id)
     else
-      
       flash[:danger] = "ログインに失敗しました"   
       redirect_to "/"
     end
@@ -22,13 +20,4 @@ class SessionsController < ApplicationController
     flash[:notice] = "ログアウトしました"
     redirect_to "/"
   end
-
-
-
-  # private
-
-  # # new.html.erbからパラメーターを受ける
-  # def login_params
-  #   params.require(:*).permit(:email, :password)
-  # end
 end

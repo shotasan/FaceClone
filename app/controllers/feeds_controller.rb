@@ -1,13 +1,10 @@
 class FeedsController < ApplicationController
   before_action :set_feed, only: [:show, :edit, :update, :destroy]
 
-  # GET /feeds
-  # GET /feeds.json
   def index
     @feeds = Feed.all.order(id: "DESC")
   end
 
-  # GET /feeds/new
   def new
     # confirm.html.erbから戻るを押した時にbackが属性として付いてくる
     # 確認画面から戻った時の処理
@@ -24,12 +21,9 @@ class FeedsController < ApplicationController
     render :new if @feed.invalid?
   end
 
-  # GET /feeds/1/edit
   def edit
   end
 
-  # POST /feeds
-  # POST /feeds.json
   def create
     @feed = current_user.feeds.build(feed_params)
     respond_to do |format|
@@ -43,8 +37,6 @@ class FeedsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /feeds/1
-  # PATCH/PUT /feeds/1.json
   def update
     respond_to do |format|
       if @feed.update(feed_params)
@@ -57,8 +49,6 @@ class FeedsController < ApplicationController
     end
   end
 
-  # DELETE /feeds/1
-  # DELETE /feeds/1.json
   def destroy
     @feed.destroy
     respond_to do |format|
@@ -73,7 +63,6 @@ class FeedsController < ApplicationController
     @feed = Feed.find(params[:id])
   end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
   def feed_params
     params.require(:feed).permit(:image, :text, :image_cache, :id)
   end

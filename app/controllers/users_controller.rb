@@ -7,7 +7,6 @@ class UsersController < ApplicationController
     # new.html.erbから受け取ったパラメーターでインスタンスを作成
     @user = User.new(user_params)
     if @user.save
-      # アカウント作成後に自身のidを引数としてshowアクションを実行
       session[:user_id] = @user.id
       redirect_to user_path(@user.id)
     else
