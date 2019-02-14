@@ -15,7 +15,9 @@ class FeedsController < ApplicationController
   # GET /feeds/new
   def new
     # confirm.html.erbから戻るを押した時にbackが属性として付いてくる
+    # 確認画面から戻った時の処理
     if params[:back]
+      # 戻った際に送られたパラメーターをセットして新規画面を作成
       @feed = Feed.new(feed_params)
     else
       @feed = Feed.new
@@ -37,7 +39,7 @@ class FeedsController < ApplicationController
     @feed = current_user.feeds.build(feed_params)
     respond_to do |format|
       if @feed.save
-        format.html { redirect_to @feed, notice: 'Feed was successfully created.' }
+        format.html { redirect_to feeds_path, notice: '投稿しました' }
         format.json { render :show, status: :created, location: @feed }
       else
         format.html { render :new }
@@ -51,7 +53,7 @@ class FeedsController < ApplicationController
   def update
     respond_to do |format|
       if @feed.update(feed_params)
-        format.html { redirect_to user_path(current_user.id), notice: 'Feed was successfully updated.' }
+        format.html { redirect_to user_path(current_user.id), notice: '編集しました' }
         format.json { render :show, status: :ok, location: @feed }
       else
         format.html { render :edit }
@@ -65,7 +67,7 @@ class FeedsController < ApplicationController
   def destroy
     @feed.destroy
     respond_to do |format|
-      format.html { redirect_to user_path(current_user.id), notice: 'Feed was successfully destroyed.' }
+      format.html { redirect_to user_path(current_user.id), notice: '削除しました' }
       format.json { head :no_content }
     end
   end

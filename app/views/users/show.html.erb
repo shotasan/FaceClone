@@ -7,7 +7,7 @@
 <% else %>
       <%# user_idからfeedテーブルのレコードを取得し一つずつuserに入れる %>
       <%# feedにはfeedのレコードが入っている%>
-  <% @user.feeds.each do |feed| %>
+  <% @user.feeds.order(id: "DESC").each do |feed| %>
     <div class="card" >
       <div class="card-body">
         <span><%= feed.created_at.strftime("%m月%d日%H:%M") %></span>
