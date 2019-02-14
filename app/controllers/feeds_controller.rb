@@ -4,11 +4,13 @@ class FeedsController < ApplicationController
   # GET /feeds
   # GET /feeds.json
   def index
-    @feeds = Feed.all
+    @feeds = Feed.all.order(id: "DESC")
   end
 
   # GET /feeds/1
   # GET /feeds/1.json
+  def show
+  end
 
   # GET /feeds/new
   def new

@@ -10,7 +10,7 @@
   <% @user.feeds.each do |feed| %>
     <div class="card" >
       <div class="card-body">
-        <span><%= feed.created_at %></span>
+        <span><%= feed.created_at.strftime("%m月%d日%H:%M") %></span>
         <p class="card-text"><%= feed.text %></p>         
       </div>
       <%= image_tag feed.image.url, class: "card-img-bottom" %>   
