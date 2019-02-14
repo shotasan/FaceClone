@@ -1,17 +1,36 @@
 // Place all the styles related to the feeds controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@media screen and (min-width: 768px) {
-  .side.list {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    display: block;
-    overflow-x: hidden;
-    overflow-y: auto;
+// @media screen and (min-width: 768px) {
+//   .side.list {
+//     position: fixed;
+//     top: 0;
+//     bottom: 0;
+//     left: 0;
+//     display: block;
+//     overflow-x: hidden;
+//     overflow-y: auto;
+//   }
+// }
+@media (max-width: 767px) {
+  .side {
+    display: none;
+  }
+  .list-in-header {
+    list-style: none;
+    float: right;
+  }
+  .list-in-header li a {
+    color: white;
   }
 }
+
+@media (min-width: 768px) {
+  .side-in-header {
+    display: none;
+  }
+}
+
 
 .container-feed-index {
   height: 100%;

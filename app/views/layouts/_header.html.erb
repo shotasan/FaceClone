@@ -12,6 +12,16 @@
         </button>
         <a class="navbar-brand" href="/feeds">FacebookClone</a>
         <p class="navbar-text navbar-right"><%= current_user.name %>でログイン中</p>
+        <div class="collapse navbar-collapse" id="collapse-id">
+          <div class="side-in-header">
+            <ul class="list-in-header">
+              <li><%= link_to "マイページ", user_path(current_user.id) %></li>
+              <li><%= link_to "投稿する", new_feed_path %></li>
+              <li><%= link_to "タイムライン", feeds_path %></li>
+              <li><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
